@@ -166,16 +166,20 @@ def logout_process(request):
         logout(request)
     return redirect('ecohazards:index')
 
+<<<<<<< HEAD
 def is_number(s):
     try:
         float(s)
         return True
     except ValueError:
         return False
+=======
+>>>>>>> 46e78bd878aadd9627c91dad716fecfa1a1035ee
 
 # ---- RENDERS ALL THE SEARCH REQUEST , SEARCH QUERY ----
 def search_process(request):
     search = request.GET['q']
+<<<<<<< HEAD
     if(is_number(search) and float(search) < 0):
         # search_list=HazardReport.objects.none
         current_post_list, num_pages = HazardReport.objects.none(),0
@@ -187,6 +191,14 @@ def search_process(request):
                    | Q(pub_date__contains=search)
                    | Q(zipcode__contains=search)
                    | Q(location__contains=search))
+=======
+    search_list = HazardReport.objects. \
+        filter(Q(title_text__icontains=search)
+               | Q(content_text__icontains=search)
+               | Q(pub_date__contains=search)
+               | Q(zipcode__contains=search)
+               | Q(location__contains=search))
+>>>>>>> 46e78bd878aadd9627c91dad716fecfa1a1035ee
     # number of search results 6
         current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
@@ -287,7 +299,11 @@ def hazardreport(request, hazardreport_id):
         is_manager = 1
     else:
         is_manager = 0
+<<<<<<< HEAD
 g
+=======
+
+>>>>>>> 46e78bd878aadd9627c91dad716fecfa1a1035ee
     if request.method == 'POST':
         form = form_class(request.POST or None, request.FILES or None)
         if form.is_valid():
