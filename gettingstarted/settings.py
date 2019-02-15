@@ -139,8 +139,8 @@ USE_TZ = True
 
 # Storage of images to Amazon S3 Bucket instead of Heroku system
 
-AWS_ACCESS_KEY_ID = os.environ.get('AKIAIIEIKA7S6ZOY5ARA')
-AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_ACCESS_KEY_ID = os.environ.get('HIDDEN FOR VULNERABILITY ISSUES')
+AWS_SECRET_ACCESS_KEY = os.environ.get('HIDDEN FOR VULNERABILITY ISSUES')
 AWS_STORAGE_BUCKET_NAME = 'ecohazardsteam7-bucket'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
